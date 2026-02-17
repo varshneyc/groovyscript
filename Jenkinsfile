@@ -76,7 +76,7 @@ pipeline {
                     ]
                     def config = envConfigs[params.ENVIRONMENT] ?: envConfigs.dev
                     config.each { key, value ->
-                        env"${key}" = value
+                        env."${key}" = value
                     }
                     def tag = params.IMAGE_TAG?.trim() ?: "${BUILD_NUMBER}"
                     if (tag == '${BUILD_NUMBER}') tag = "${BUILD_NUMBER}"
