@@ -94,8 +94,8 @@ pipeline {
                 withCredentials([string(credentialsId: 'github-pat', variable: 'TOKEN')]) {
                     sh '''
                         set -e
-                        rm -rf Jenkinsfile README.md scripts .git
-                        git clone --branch "${MAIN_BRANCH}" "https://${TOKEN}@${MAIN_REPO#https://}" .
+                        rm -rf *
+                        git clone --branch "${MAIN_BRANCH}" "https://${TOKEN}@${MAIN_REPO#https://}" tap_python_core
                         cd tap_python_core 
                         ls -la
                         cd ..
