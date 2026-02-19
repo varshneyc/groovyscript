@@ -95,7 +95,7 @@ pipeline {
                     sh '''
                         set -e
                         rm -rf * 
-                        git clone --branch "${MAIN_BRANCH}" "https://${TOKEN}@${MAIN_REPO#https://}" .
+                        git clone --branch "${MAIN_BRANCH}" "https://${TOKEN}@${MAIN_REPO#https://}" tap_python_core
                         git clone --branch "${ENV_BRANCH}" "https://${TOKEN}@${SETTINGS_REPO#https://}" neo_settings
                         cp "neo_settings/TAPLEND/${ENV_FILE}" .env
                         echo ".env loaded from neo_settings (${ENV_FILE})"
