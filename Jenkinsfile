@@ -96,6 +96,9 @@ pipeline {
                         set -e
                         rm -rf * 
                         git clone --branch "${MAIN_BRANCH}" "https://${TOKEN}@${MAIN_REPO#https://}" tap_python_core
+                        cd tap_python_core 
+                        ls -la
+                        cd ..
                         git clone --branch "${ENV_BRANCH}" "https://${TOKEN}@${SETTINGS_REPO#https://}" neo_settings
                         cd neo_settings 
                         ls -la
