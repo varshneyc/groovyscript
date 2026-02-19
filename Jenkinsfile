@@ -99,6 +99,7 @@ pipeline {
                         git clone --branch "${ENV_BRANCH}" "https://${TOKEN}@${SETTINGS_REPO#https://}" neo_settings
                         cd neo_settings 
                         ls -la
+                        cd ..
                         cp "neo_settings/TAPLEND/${ENV_FILE}" .env
                         echo ".env loaded from neo_settings (${ENV_FILE})"
                     '''
