@@ -89,7 +89,7 @@ pipeline {
             }
         }
 
-        stage('Checkout Code + .env') {
+        stage('Checkout Code + .env.devcore.azure') {
             steps {
                 withCredentials([string(credentialsId: 'github-pat', variable: 'TOKEN')]) {
                     sh '''
