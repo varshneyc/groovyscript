@@ -141,7 +141,7 @@ pipeline {
                         echo "DEBUG: ACA_ENV_NAME=$ACA_ENV_NAME"
                         echo "DEBUG: ACA_LOCATION=$ACA_LOCATION"
                         echo "DEBUG: AZURE_RG=$AZURE_RG"
-
+                        pwd
                         make deploy-azure-aca VERSION="$VERSION"
                     '''
                 }
