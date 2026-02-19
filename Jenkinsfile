@@ -94,7 +94,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'github-pat', variable: 'TOKEN')]) {
                     sh '''
                         set -e
-                        rm -rf * .[^.]* || true
+                        rm -rf * 
                         git clone --branch "${MAIN_BRANCH}" "https://${TOKEN}@${MAIN_REPO#https://}" .
                         git clone --branch "${ENV_BRANCH}" "https://${TOKEN}@${SETTINGS_REPO#https://}" neo_settings
                         cp "neo_settings/TAPLEND/${ENV_FILE}" .env
