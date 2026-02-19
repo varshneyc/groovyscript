@@ -95,7 +95,7 @@ pipeline {
                     sh '''
                         set -e
                         rm -rf * 
-                        git clone --branch "${MAIN_BRANCH}" "https://${TOKEN}@${MAIN_REPO#https://}" tap_python_core
+                        git clone --branch "${MAIN_BRANCH}" "https://${TOKEN}@${MAIN_REPO#https://}" .
                         cd tap_python_core 
                         ls -la
                         cd ..
